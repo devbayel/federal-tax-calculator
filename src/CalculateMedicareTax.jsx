@@ -23,7 +23,6 @@ function CalculateMedicareTax(amount, status){
             break;
         }
     }
-    console.log(result);
     return result;
 
 }

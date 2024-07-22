@@ -6,10 +6,10 @@ import CalculateStateTax from './CalculateStateTax';
 
 const TaxCalculator = () => {
   const [amount, setAmount] = useState('');
-  const [status, setStatus] = useState('single');
-  const [state, setState] = useState('');
+  const [status, setStatus] = useState('select');
+  const [state, setState] = useState('select');
 
-  const [stateTax, setStateTax] = useState(null);
+  const [stateTax, setStateTax] = useState('CA');
   const [federalTax, setFederalTax] = useState(null);
   const [medicare, setMedicare] = useState(null);
   const [socialSecurity, setSocialSecurity] = useState(null);
@@ -47,6 +47,7 @@ const TaxCalculator = () => {
         <label>
           State:
           <select value={state} onChange={(e) => setState(e.target.value)}>
+            <option value='select'>Select</option>
             <option value='CA'>California</option>
             <option value='TX'>Texas</option>
           </select>
@@ -56,6 +57,7 @@ const TaxCalculator = () => {
         <label>
           Status:
           <select value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="select">Select</option>
             <option value="single">Single</option>
             <option value="married">Married</option>
           </select>

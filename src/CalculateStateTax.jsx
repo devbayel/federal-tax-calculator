@@ -31,18 +31,16 @@ const CalculateStateTax = (amount, status, state) => {
         // Add other states and their tax rates here if needed
     };
 
-    console.log('Selected state:', state);
-    console.log('Available state tax rates:', stateTaxRates);
+    let result = 0;
 
     if (!stateTaxRates[state]) {
         console.log('No tax rates available for state:', state);
-        return 0; // No state tax for states not listed
+        return result; // No state tax for states not listed
     }
 
     const rates = stateTaxRates[state][status];
     console.log('Selected rates for', state, status, ':', rates);
 
-    let result = 0;
 
     for (let i = 0; i < rates.length; i++) {
         const rate = rates[i];
